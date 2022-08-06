@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow: hidden;
+}
+.sky {
+  background-image: url("background3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  z-index: -1;
+}
+.road {
+  background-image: url("track.png");
+  /* background-color: black; */
+  background-repeat: repeat-x;
+  background-size: contain;
+  height: 200px;
+  width: 800vw;
+  position: absolute;
+  bottom: 0;
+  /* animation: roadanimation 10s linear infinite; */
+}
+.car {
+  background-image: url("carpic3.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  left: 475px;
+  bottom: 175px;
+  /* animation: caranimation 2s linear infinite; */
+}
+.wheel {
+  height: 41px;
+  position: relative;
+  /* animation: wheelanimation 1s linear infinite; */
+}
+#wheel1 {
+  left: 45px;
+  top: 53px;
+}
+#wheel2 {
+  left: 181px;
+  top: 52px;
+}
+.btn {
+  margin: 20px;
+  padding: 10px 20px;
+  border: 2px solid tomato;
+  border-radius: 10px;
+  font-size: 20px;
+  font: bold;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+#btn1 {
+  float: left;
+  /* left: 20; */
+}
+#btn2 {
+  float: right;
+  float: right;
+  margin: 20px 50px;
+  font-size: 30px;
+  border: 2px solid turquoise;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+
+@keyframes wheelanimation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes roadanimation {
+  100% {
+    transform: translateX(-600vw);
+  }
+}
+
+@keyframes caranimation{
+  0%{
+    transform: translateY(-5px);
+  }
+  50%{
+    transform: translateY(5px);
+  }
+  100%{
+    transform: translateY(-5px);
+  }
+}

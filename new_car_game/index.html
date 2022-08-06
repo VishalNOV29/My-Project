@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Car Animation</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+    </style>
+  </head>
+  <body>
+    <div class="sky">
+      <div class="button">
+        <button class="btn" id="btn1" onclick="startStop();">START</button>
+        <audio src="sound.mp3" id="audio"></audio>
+        <button  id="btn2" onclick="playPause()">&#128263</button>
+      </div>
+      <div class="sound"></div>
+      <div class="road" id="road"></div>
+      <div class="car" id="car">
+        <img src="circle-cropped.png" alt="img" class="wheel" id="wheel1" />
+        <img src="circle-cropped.png" alt="img" class="wheel" id="wheel2" />
+      </div>
+    </div>
+    <script>
+      let wheel1 = document.getElementById("wheel1");
+      let wheel2 = document.getElementById("wheel2");
+      let road = document.getElementById("road");
+      let audio = document.getElementById("audio");
+      let btn1 = document.getElementById("btn1");
+      let btn2 = document.getElementById("btn2");
+      let car=document.getElementById('car')
+      let count = 0;
+      function startStop() {
+        if (count == 0) {
+          count = 1;
+          wheel1.style.animation = "wheelanimation .5s linear infinite";
+          wheel2.style.animation = "wheelanimation .5s linear infinite";
+          road.style.animation = "roadanimation 10s linear infinite";
+          car.style.animation='caranimation 2s linear infinite'
+          audio.play()
+          audio.loop=true
+          btn1.innerHTML = "PAUSE";
+        } else {
+          count = 0;
+          wheel1.style.animation = "none";
+          wheel2.style.animation = "none";
+          road.style.animation = "none";
+          car.style.animation='none'
+          btn1.innerHTML = "START";
+          audio.pause()
+        }
+      }
+      let secondcount = 0;
+      function playPause() {
+        if (secondcount == 0) {
+          secondcount = 1;
+          audio.pause();
+          audio.loop = true;
+          btn2.innerHTML = "&#128266";
+        } else {
+          secondcount = 0;
+          audio.play();
+          audio.loop=true
+          btn2.innerHTML = "&#128263";
+        }
+      }
+    </script>
+  </body>
+</html>

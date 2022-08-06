@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        background-color: red;
+        border: 2px solid black;
+        height: 100px;
+        width: 100px;
+        margin: 100px auto;
+        animation: rotate 2s linear infinite;
+      }
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main" id="main1"></div>
+    <button onclick="myFun()" id="btn">STOP</button>
+    <script>
+      let item = document.getElementById("main1");
+      let btn = document.getElementById("btn");
+      let count = 0;
+      function myFun() {
+        if (count == 0) {
+          count = 1;
+          item.style.animation = "none";
+          btn.innerHTML = "PLAY";
+        } else {
+          count = 0;
+          item.style.animation = "rotate 2s linear infinite";
+          btn.innerHTML = "STOP";
+        }
+      }
+    </script>
+  </body>
+</html>
